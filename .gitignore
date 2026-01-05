@@ -1,0 +1,7 @@
+weights/
+results_val/
+results_train/
+__pycache__/
+try.py
+try2.py
+DS_Store

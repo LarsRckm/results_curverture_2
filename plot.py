@@ -1074,10 +1074,10 @@ def plot_multiple_pred_with_names_error_bar_area(x_values, y_values_prediction_t
 
 
 if __name__ == "__main__":
-    plot_val_encoder_roundedInput(180, 0)
-    plot_val_encoder_roundedInput(180, 1)
-    plot_val_encoder_roundedInput(180, 2)
-    plot_val_encoder_roundedInput(180, 3)
+    plot_val_encoder_roundedInput(2160, 0)
+    plot_val_encoder_roundedInput(2160, 1)
+    plot_val_encoder_roundedInput(2160, 2)
+    plot_val_encoder_roundedInput(2160, 3)
 
     # plot_multiple_pred_with_names_error_bar_area(1430)
 

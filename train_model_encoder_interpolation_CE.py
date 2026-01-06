@@ -191,8 +191,8 @@ def train_model_TimeSeries_paper(config):
 
             d2 = pred_norm[:,2:] - 2*pred_norm[:,1:-1] + pred_norm[:,:-2]
 
-            scale = d2.abs().mean(dim=1, keepdim=True) + 1e-6
-            loss_curv = ((d2/scale)**2).mean()
+            # scale = d2.abs().mean(dim=1, keepdim=True) + 1e-6
+            loss_curv = torch.sqrt((d2**2 + (1e-3)**2)).mean()
 
             # pred_value = pred_value * div_term.unsqueeze(-1) + min_value.unsqueeze(-1)
             # prediction_grad = pred_value[:, 1:] - pred_value[:, :-1]
@@ -208,7 +208,7 @@ def train_model_TimeSeries_paper(config):
 
             # alpha = (g_ce / (g_grad + 1e-8)).detach()
 
-            loss = lossCE + loss_curv
+            loss = lossCE + config["Curvature_loss_weight"] * loss_curv
             batch_iterator.set_postfix({f"loss": f"{loss.item():6.5f}; lossCE: {lossCE.item():6.3f}; lossCurvature: {loss_curv.item():6.3f}"})
 
             #backpropagate the loss

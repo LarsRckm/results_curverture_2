@@ -22,7 +22,7 @@ def get_config():
         "lr": 10**-4,                                       #learning rate for Adam optimizer
         "d_model": 512,
         "model_folder": "weights",                          #folder name to store models in
-        "model_basename": "Encoder_Interpolation_Discontinuous_",
+        "model_basename": "Encoder_Interpolation_CE_PeriodicSum_",
         "preload": "latest",                                #whether or not to start training with the latest trained version
         "experiment_name": "runs/tmodel",
         "label_smoothing": 0.0,

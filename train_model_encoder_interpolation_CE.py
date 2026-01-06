@@ -209,7 +209,7 @@ def train_model_TimeSeries_paper(config):
             # alpha = (g_ce / (g_grad + 1e-8)).detach()
 
             loss = lossCE + config["Curvature_loss_weight"] * loss_curv
-            batch_iterator.set_postfix({f"loss": f"{loss.item():6.5f}; lossCE: {lossCE.item():6.3f}; lossCurvature: {loss_curv.item():6.3f}"})
+            batch_iterator.set_postfix({f"loss": f"{loss.item():6.5f}; lossCE: {lossCE.item():6.3f}; lossCurvature: {loss_curv.item():6.6f}"})
 
             #backpropagate the loss
             loss.backward()
